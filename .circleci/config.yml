@@ -3,5 +3,15 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.3-node-browsers
-    steps:
-      - run: echo "Hello World"
+
+        environment:
+          - APP_DEBUG: true
+          - APP_ENV: testing
+          - DB_CONNECTION: mysql
+          - DB_DATABASE: test_sample01
+          - DB_USERNAME: root
+
+      - image: circleci/mysql:5.7-ram
+        environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD: true          
+          - MYSQL_DATABASE: test_sample01
