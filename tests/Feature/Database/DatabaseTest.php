@@ -10,7 +10,7 @@ use App\Models\Book;
 class DatabaseTest extends TestCase
 {
 
-    use RefreshDatabase;
+   use RefreshDatabase;
 
     /**
      * A basic feature test example.
